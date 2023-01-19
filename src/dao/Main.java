@@ -5,7 +5,7 @@ package dao;
 public class Main {
 
 		 public static void main(String args[]) {
-				
+				/*
 			DaoCreationBank client = new DaoCreationBank();
 			client.getClient();
 			
@@ -30,7 +30,10 @@ public class Main {
 			 DaoTransfert transfert = new DaoTransfert();
 			 transfert.transfertCompte();  
 			 
+			 */
 			 
+			 DaoModifierCompte modiff = new DaoModifierCompte();
+			 modiff.modifierCompte(null);
 	} 
 	}
 

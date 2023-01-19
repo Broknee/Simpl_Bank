@@ -1,17 +1,44 @@
 package controller;
 
+
+import javafx.event.ActionEvent;
 import java.io.IOException;
-import javafx.application.Application;
+
+import dao.DaoModifierCompte;
 import javafx.stage.Stage;
+import model.ModelCompte;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import java.lang.ModuleLayer.Controller;
+
 
 
 public class ControllerModifierCompte {
+	
+	
+	
+	
+	@FXML 
+	private TextField type;
+	@FXML
+	private Button enregistrer;
+	
+	String typeCompte;
+	
+	
+	 public void submitModif(ActionEvent event) {
+		typeCompte = type.getText();
+		ModelCompte type = new ModelCompte();
+		type.setType(typeCompte);	
+		DaoModifierCompte modifCompte = new DaoModifierCompte();
+		modifCompte.modifierCompte(typeCompte);
+	}
+	
+	
+	
+	
 	public void affModif(Stage primaryStage) {
 		try {
 			primaryStage.setTitle("Modifier Compte");

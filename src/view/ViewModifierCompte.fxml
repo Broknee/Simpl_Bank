@@ -45,7 +45,7 @@
                   </Pane>
                </children>
             </AnchorPane>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0" >
                <children>
                   <Pane layoutX="-4.0" layoutY="-4.0" prefHeight="373.0" prefWidth="706.0" style="-fx-background-color: linear-gradient(to bottom, #756267, #f4f4f4);">
                      <children>
@@ -57,9 +57,9 @@
                                  </font>
                               </Text>
                               <Label layoutX="113.0" layoutY="24.0" text="Type" />
-                              <TextField id="type" layoutX="51.0" layoutY="41.0" />
+                              <TextField id="type" fx:id="type" layoutX="51.0" layoutY="41.0" />
                               <Label layoutX="88.0" layoutY="74.0" text="Frais Transfert" />
-                              <Button id="enregistrer" layoutX="40.0" layoutY="298.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="170.0" style="-fx-background-color: #ce0033; -fx-background-radius: 20px;" text="Enregistrer les modifications" textFill="WHITE" />
+                              <Button id="enregistrer" fx:id="enregistrer" onAction="#submitModif" layoutX="40.0" layoutY="298.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="170.0" style="-fx-background-color: #ce0033; -fx-background-radius: 20px;" text="Enregistrer les modifications" textFill="WHITE"  />
                               <Label layoutX="83.0" layoutY="123.0" text="Solde minimum" />
                               <Label layoutX="105.0" layoutY="176.0" text="Plafond" />
                               <TextField id="fraisTransfert" layoutX="51.0" layoutY="91.0" />

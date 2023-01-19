@@ -1,8 +1,67 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane xmlns:fx="http://javafx.com/fxml/1">
-	<!-- TODO Add Nodes -->
+<AnchorPane xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <SplitPane dividerPositions="0.25903614457831325" orientation="VERTICAL" prefHeight="500.0" prefWidth="700.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+               <children>
+                  <Pane layoutX="-2.0" layoutY="-52.0" prefHeight="141.0" prefWidth="750.0" style="-fx-background-color: #ffffff;">
+                     <children>
+                        <Text layoutX="166.0" layoutY="100.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bienvenue sur le système de gestion bancaire Simpl'Bank !">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Text>
+                     </children></Pane>
+                  <ImageView fitHeight="90.0" fitWidth="130.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../images/logo.png" />
+                     </image></ImageView>
+                     <Pane layoutY="85.0" prefHeight="45.0" prefWidth="706.0" style="-fx-background-color: #ce0033;">
+                     <children>
+                        <Text fill="WHITE" layoutX="240.0" layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Liste des clients" textAlignment="CENTER" wrappingWidth="253.62701416015625">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Text>
+                        <ImageView accessibleRole="BUTTON" fitHeight="35.0" fitWidth="54.0" layoutX="57.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../images/arrow.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </Pane>
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+               <children>
+                  <Pane layoutX="-4.0" layoutY="7.0" prefHeight="373.0" prefWidth="706.0" style="-fx-background-color: #fbfbfb;">
+                     <children>
+                        <TableView layoutX="50.0" layoutY="35.0" prefHeight="278.0" prefWidth="607.0">
+                          <columns>
+                            <TableColumn id="id_client" prefWidth="41.600032806396484" text="ID" />
+                            <TableColumn id="nom" prefWidth="77.60001373291016" text="Nom" />
+                              <TableColumn id="prenom" prefWidth="82.4000244140625" text="Prénom" />
+                              <TableColumn id="mail" prefWidth="100.80000305175781" text="Mail" />
+                              <TableColumn id="adresse" prefWidth="156.0" text="Adresse" />
+                              <TableColumn id="telephone" prefWidth="71.199951171875" text="Téléphone" />
+                              <TableColumn id="#id_banque" prefWidth="81.60003662109375" text="ID banque" />
+                          </columns>
+                        </TableView>
+                     </children></Pane>
+               </children></AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
 </AnchorPane>
-

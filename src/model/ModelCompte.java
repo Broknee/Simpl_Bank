@@ -1,6 +1,18 @@
 package model;
 
 public class ModelCompte {
+	
+	private	int idCompte;
+	private	String codeCompte;
+	private	String type;
+	private	double fraisTransfert;
+	private	double soldeMinimum;
+	private	double taux;
+	private	double plafond;
+	private	double soldeActuel;
+	
+	
+	
 	public int getIdCompte() {
 		return idCompte;
 	}
@@ -16,7 +28,7 @@ public class ModelCompte {
 	public String getType() {
 		return type;
 	}
-	public void setType(String type) {
+	public  void setType(String type) {
 		this.type = type;
 	}
 	public double getFraisTransfert() {
@@ -49,13 +61,6 @@ public class ModelCompte {
 	public void setSoldeActuel(double soldeActuel) {
 		this.soldeActuel = soldeActuel;
 	}
-	private	int idCompte;
-	private	String codeCompte;
-	private	String type;
-	private	double fraisTransfert;
-	private	double soldeMinimum;
-	private	double taux;
-	private	double plafond;
-	private	double soldeActuel;
+	
 		
 }

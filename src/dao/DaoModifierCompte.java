@@ -2,14 +2,20 @@ package dao;
 
 import java.sql.Connection;
 import java.sql.Statement;
+import model.ModelCompte;
 
 public class DaoModifierCompte extends Connexion {
-	public void modifierCompte() {
+	
+	
+	
+	
+	public void modifierCompte(String typeCompte) {
 		Connection conn=this.connecter();
 		try
 				{
 					Statement stmt = conn.createStatement();
-					String sqlUpdate = "UPDATE client SET nom=\"Mass\",prenom=\"Marinette\",mail=\"massette.marinette@mail.com\" WHERE id_client =1";
+					System.out.println(typeCompte);
+					String sqlUpdate = "UPDATE compte SET type=\"Epargne\"  WHERE id_client =1";
 					stmt.executeUpdate(sqlUpdate);
 					if(stmt!=null) {
 						System.out.println("Les informations client ont bien été modifiées");
