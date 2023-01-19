@@ -11,7 +11,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ControllerHome">
    <children>
       <SplitPane dividerPositions="0.25903614457831325" orientation="VERTICAL" prefHeight="500.0" prefWidth="700.0">
         <items>
@@ -57,10 +57,10 @@
                                  </font>
                               </Text>
                               <Label layoutX="53.0" layoutY="49.0" text="Nom de l'entreprise :" />
-                              <TextField id="raison_sociale" layoutX="53.0" layoutY="66.0" />
+                              <TextField id="raison_sociale" fx:id="raison_sociale" layoutX="53.0" layoutY="66.0" />
                               <Label layoutX="53.0" layoutY="108.0" text="Mot de passe :" />
-                              <TextField id="mdp" layoutX="53.0" layoutY="125.0" />
-                              <Button id="submit" layoutX="68.0" layoutY="161.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="119.0" style="-fx-background-color: #ce0033; -fx-background-radius: 20px;" text="Envoyer" textFill="WHITE" />
+                              <TextField id="mdp" fx:id="mdp" layoutX="53.0" layoutY="125.0" />
+                              <Button id="submit" fx:id="submit" onAction="#submitHome" layoutX="68.0" layoutY="161.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="119.0" style="-fx-background-color: #ce0033; -fx-background-radius: 20px;" text="Envoyer" textFill="WHITE" />
                            </children>
                         </Pane>
                         <TextField id="id_banque" layoutX="305.0" layoutY="23.0" opacity="0.0" />

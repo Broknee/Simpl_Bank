@@ -32,8 +32,7 @@ public class Main {
 			 
 			 */
 			 
-			 DaoModifierCompte modiff = new DaoModifierCompte();
-			 modiff.modifierCompte(null);
+			
 	} 
 	}
 

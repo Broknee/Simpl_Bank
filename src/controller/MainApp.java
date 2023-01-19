@@ -10,9 +10,13 @@ public class MainApp extends Application {
 		
 		try {
 			
-			ControllerModifierCompte modif = new ControllerModifierCompte();
-			modif.affModif(primaryStage);
+			ControllerHome principal = new ControllerHome();
+			principal.affHome(primaryStage);
 			
+			// vers la page modifier compte
+		/*	ControllerModifierCompte modif = new ControllerModifierCompte();
+			modif.affModif(primaryStage);
+			*/
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
