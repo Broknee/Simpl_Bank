@@ -1,9 +1,7 @@
 package controller;
 
-
 import javafx.event.ActionEvent;
 import java.io.IOException;
-
 import dao.DaoModifierCompte;
 import javafx.stage.Stage;
 import model.ModelCompte;
@@ -17,24 +15,59 @@ import javafx.fxml.FXMLLoader;
 
 public class ControllerModifierCompte {
 	
-	
-	
-	
+	@FXML
+	private TextField fraisTransfert;
+	@FXML 
+	private TextField soldeMini;
+	@FXML
+	private TextField plafond;
 	@FXML 
 	private TextField type;
 	@FXML
 	private Button enregistrer;
 	
-	String typeCompte;
+	 String typeCompte;
+	 String soldeMinimum;
+	 String plafondMax;
+	 String frais;
+	
+	
+	
 	
 	
 	 public void submitModif(ActionEvent event) {
-		typeCompte = type.getText();
-		ModelCompte type = new ModelCompte();
-		type.setType(typeCompte);	
-		DaoModifierCompte modifCompte = new DaoModifierCompte();
-		modifCompte.modifierCompte(typeCompte);
+		
+		 
+		 if (!type.getText().isEmpty()) {
+			 	typeCompte = type.getText();
+			 	ModelCompte type = new ModelCompte();
+				type.setType(typeCompte);	
+				DaoModifierCompte modifCompte = new DaoModifierCompte();
+				modifCompte.modifierTypeCompte(typeCompte);
+		 }
+		  if  (!soldeMini.getText().isEmpty()) {
+			  soldeMinimum= soldeMini.getText();
+		 	double soldem = Double.parseDouble(soldeMinimum);
+		 	ModelCompte soldeMin = new ModelCompte();
+			soldeMin.setSoldeMinimum(soldem);
+			DaoModifierCompte modifSoldeCompte = new DaoModifierCompte();
+			modifSoldeCompte.modifierSoldeCompte(soldem);
+		 }
+		if (!fraisTransfert.getText().isEmpty()) 
+		{
+			frais = fraisTransfert.getText();
+			double fraisT = Double.parseDouble(frais);
+			DaoModifierCompte fraisDeTransfert = new DaoModifierCompte();
+			fraisDeTransfert.modifierFraisCompte(fraisT);
+		}
+		if (!plafond.getText().isEmpty()) 
+		{
+			plafondMax= plafond.getText();
+			double plafondM = Double.parseDouble(plafondMax);
+			DaoModifierCompte plafond = new DaoModifierCompte();
+			plafond.modifierPlafondCompte(plafondM);
 	}
+	 }
 	
 	
 	

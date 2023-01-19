@@ -2,9 +2,7 @@ package controller;
 
 import javafx.application.Application;
 import javafx.stage.Stage;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.fxml.FXMLLoader;
+
 
 public class MainApp extends Application {
 	@Override

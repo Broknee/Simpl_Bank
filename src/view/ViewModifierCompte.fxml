@@ -57,14 +57,14 @@
                                  </font>
                               </Text>
                               <Label layoutX="113.0" layoutY="24.0" text="Type" />
-                              <TextField id="type" fx:id="type" layoutX="51.0" layoutY="41.0" />
+                              <TextField id="type" fx:id="type" layoutX="51.0" layoutY="41.0"/>
                               <Label layoutX="88.0" layoutY="74.0" text="Frais Transfert" />
                               <Button id="enregistrer" fx:id="enregistrer" onAction="#submitModif" layoutX="40.0" layoutY="298.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="170.0" style="-fx-background-color: #ce0033; -fx-background-radius: 20px;" text="Enregistrer les modifications" textFill="WHITE"  />
-                              <Label layoutX="83.0" layoutY="123.0" text="Solde minimum" />
+                              <Label layoutX="83.0" layoutY="123.0" text="Solde minimum"  />
                               <Label layoutX="105.0" layoutY="176.0" text="Plafond" />
-                              <TextField id="fraisTransfert" layoutX="51.0" layoutY="91.0" />
-                              <TextField id="soldeMini" layoutX="50.0" layoutY="140.0" />
-                              <TextField id="plafond" layoutX="50.0" layoutY="193.0" />
+                              <TextField id="fraisTransfert" fx:id="fraisTransfert" layoutX="51.0" layoutY="91.0" />
+                              <TextField id="soldeMini" fx:id="soldeMini" layoutX="50.0" layoutY="140.0" />
+                              <TextField id="plafond" fx:id="plafond" layoutX="50.0" layoutY="193.0" />
                               <Label id="taux" layoutX="88.0" layoutY="230.0" text="Taux d'intêret" />
                               <TextField id="taux" layoutX="51.0" layoutY="247.0" />
                            </children>
