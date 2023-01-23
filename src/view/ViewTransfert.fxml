@@ -1,8 +1,98 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane xmlns:fx="http://javafx.com/fxml/1">
-	<!-- TODO Add Nodes -->
+<AnchorPane  fx:controller="controller.ControllerTransfert" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <SplitPane dividerPositions="0.34186746987951805" orientation="VERTICAL" prefHeight="400.0" prefWidth="600.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="94.0" prefWidth="599.0">
+               <children>
+                  <Pane layoutX="-6.0" layoutY="-6.0" prefHeight="97.0" prefWidth="606.0" style="-fx-background-color: #ffffff;">
+                     <children>
+                        <ImageView fitHeight="98.0" fitWidth="149.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../images/logo.png" />
+                           </image>
+                        </ImageView>
+                        <MenuBar layoutX="159.0" layoutY="41.0" prefHeight="26.0" prefWidth="432.0" style="-fx-background-color: #ffffff;">
+                          <menus>
+                            <Menu mnemonicParsing="false" text="Ouvrir compte" />
+                            <Menu mnemonicParsing="false" text="Créditer" />
+                            <Menu mnemonicParsing="false" text="Débiter" />
+                              <Menu mnemonicParsing="false" style="-fx-background-color: F1F5F8;" text="Transférer" />
+                              <Menu mnemonicParsing="false" text="Modifier" />
+                              <Menu mnemonicParsing="false" text="Clôturer" />
+                          </menus>
+                        </MenuBar>
+                     </children>
+                  </Pane>
+                  <Pane layoutX="-6.0" layoutY="92.0" prefHeight="42.0" prefWidth="606.0" style="-fx-background-color: CE0033;">
+                     <children>
+                        <Text fill="WHITE" layoutX="269.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Transfert">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Text>
+                        <ImageView fitHeight="33.0" fitWidth="58.0" layoutX="40.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../images/arrow.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </Pane>
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="290.0" prefWidth="599.0" style="-fx-background-color: #fbfbfb;">
+               <children>
+                  <MenuButton layoutX="106.0" layoutY="56.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="110.0" style="-fx-background-color: CE0033;" text="Du compte" textFill="WHITE">
+                    <items>
+                      <MenuItem mnemonicParsing="false" style="-fx-background-color: D9D9D9;" text="n°" />
+                      <MenuItem mnemonicParsing="false" style="-fx-background-color: D9D9D9;" text="n°" />
+                    </items>
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </MenuButton>
+                  <TextField fx:id="idSender" layoutX="87.0" layoutY="100.0" />
+                  <MenuButton layoutX="373.0" layoutY="56.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="135.0" style="-fx-background-color: CE0033;" text="Vers le compte" textFill="WHITE">
+                     <items>
+                        <MenuItem mnemonicParsing="false" style="-fx-background-color: D9D9D9;" text="n°" />
+                        <MenuItem mnemonicParsing="false" style="-fx-background-color: D9D9D9;" text="n°" />
+                     </items>
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </MenuButton>
+                   <TextField fx:id="idReceiver" layoutX="366.0" layoutY="99.0" />
+                  <ImageView fitHeight="70.0" fitWidth="110.0" layoutX="258.0" layoutY="42.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../images/arrowRight.png" />
+                     </image>
+                  </ImageView>
+                  <Pane layoutX="149.0" layoutY="137.0" prefHeight="42.0" prefWidth="299.0" style="-fx-background-color: D9D9D9;">
+                     <children>
+                        <Text layoutX="14.0" layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Entrez le montant à transférer :" />
+                        <TextField fx:id="somme" layoutX="190.0" layoutY="8.0" prefHeight="26.0" prefWidth="88.0" />
+                     </children>
+                  </Pane>
+                  <Button fx:id="submit" onAction="#transferer" layoutX="258.0" layoutY="194.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="81.0" style="-fx-border-radius: 10px; -fx-background-radius: 10px;" text="Valider" />
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
 </AnchorPane>
 

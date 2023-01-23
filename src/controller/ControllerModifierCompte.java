@@ -8,6 +8,7 @@ import model.ModelCompte;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.layout.AnchorPane;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 
@@ -25,11 +26,18 @@ public class ControllerModifierCompte {
 	private TextField type;
 	@FXML
 	private Button enregistrer;
+	@FXML
+	private TextField idcompte;
+	@FXML
+	private TextField taux;
+	
 	
 	 String typeCompte;
-	 String soldeMinimum;
-	 String plafondMax;
-	 String frais;
+	 double soldem;
+	 double plafondM;
+	 double fraisT;
+	 int IdCompte;
+	 double tauxCompte;
 	
 	
 	
@@ -37,49 +45,66 @@ public class ControllerModifierCompte {
 	
 	 public void submitModif(ActionEvent event) {
 		
+		 if(!idcompte.getText().isEmpty()) {
+			 IdCompte =Integer.parseInt(idcompte.getText());
+			 ModelCompte compte = new ModelCompte();
+		       compte.setIdCompte(IdCompte);
+		 } 
 		 
 		 if (!type.getText().isEmpty()) {
 			 	typeCompte = type.getText();
 			 	ModelCompte type = new ModelCompte();
 				type.setType(typeCompte);	
 				DaoModifierCompte modifCompte = new DaoModifierCompte();
-				modifCompte.modifierTypeCompte(typeCompte);
+				modifCompte.modifierTypeCompte(typeCompte,IdCompte);
 		 }
 		  if  (!soldeMini.getText().isEmpty()) {
-			  soldeMinimum= soldeMini.getText();
-		 	double soldem = Double.parseDouble(soldeMinimum);
+		 	 soldem = Double.parseDouble( soldeMini.getText());
 		 	ModelCompte soldeMin = new ModelCompte();
 			soldeMin.setSoldeMinimum(soldem);
 			DaoModifierCompte modifSoldeCompte = new DaoModifierCompte();
-			modifSoldeCompte.modifierSoldeCompte(soldem);
+			modifSoldeCompte.modifierSoldeCompte(soldem,IdCompte);
 		 }
 		if (!fraisTransfert.getText().isEmpty()) 
 		{
-			frais = fraisTransfert.getText();
-			double fraisT = Double.parseDouble(frais);
+			fraisT = Double.parseDouble(fraisTransfert.getText());
 			DaoModifierCompte fraisDeTransfert = new DaoModifierCompte();
-			fraisDeTransfert.modifierFraisCompte(fraisT);
+			fraisDeTransfert.modifierFraisCompte(fraisT,IdCompte);
 		}
 		if (!plafond.getText().isEmpty()) 
 		{
-			plafondMax= plafond.getText();
-			double plafondM = Double.parseDouble(plafondMax);
+			plafondM = Double.parseDouble(plafond.getText());
 			DaoModifierCompte plafond = new DaoModifierCompte();
-			plafond.modifierPlafondCompte(plafondM);
+			plafond.modifierPlafondCompte(plafondM,IdCompte);
+	}
+		if (!taux.getText().isEmpty()) 
+		{
+			tauxCompte = Double.parseDouble(taux.getText());
+			DaoModifierCompte taux = new DaoModifierCompte();
+			taux.modifierTauxCompte(tauxCompte,IdCompte);
 	}
 	 }
 	
 	
 	
 	
-	public void affModif(Stage primaryStage) {
+	public void affModif() {
 		try {
-			primaryStage.setTitle("Modifier Compte");
-			Parent root = FXMLLoader.load(getClass().getResource("/view/ViewModifierCompte.fxml"));
-			Scene scene = new Scene(root,700,500);
-			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
-			primaryStage.setScene(scene);
-			primaryStage.show();
+		
+			AnchorPane secondaryLayout = new AnchorPane();
+			secondaryLayout = FXMLLoader.load(getClass().getResource("/view/ViewModifierCompte.fxml"));
+
+			Scene modifierCompteScene = new Scene(secondaryLayout, 700, 500);
+
+			// New window (Stage)
+			Stage newWindow = new Stage();
+			newWindow.setTitle("Ouvrir un compte");
+			newWindow.setScene(modifierCompteScene);
+
+			
+
+			newWindow.show();
+			
 			
 		} catch (IOException e) {
 			// TODO Auto-generated catch block

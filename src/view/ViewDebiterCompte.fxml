@@ -1,16 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.SplitPane?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
+<?import dao.DaoDebiterCompte?>
 
-<AnchorPane xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+
+<AnchorPane xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ControllerDebiterCompte">
    <children>
       <SplitPane dividerPositions="0.25903614457831325" orientation="VERTICAL" prefHeight="500.0" prefWidth="700.0">
         <items>
@@ -18,19 +25,24 @@
                <children>
                   <Pane layoutX="-2.0" layoutY="-52.0" prefHeight="141.0" prefWidth="750.0" style="-fx-background-color: #ffffff;">
                      <children>
-                        <Text layoutX="166.0" layoutY="100.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bienvenue sur le système de gestion bancaire Simpl'Bank !">
-                           <font>
-                              <Font name="System Bold" size="16.0" />
-                           </font>
-                        </Text>
+                        <MenuBar layoutX="147.0" layoutY="84.0" prefHeight="51.0" prefWidth="439.0" style="-fx-background-color: #ffffff;">
+                          <menus>
+                            <Menu mnemonicParsing="false" text="Ouvrir un compte" />
+                            <Menu mnemonicParsing="false" text="Créditer" />
+                            <Menu mnemonicParsing="false" style="-fx-background-color: #f4f4f4;" text="Débiter" />
+                              <Menu mnemonicParsing="false" text="Transférer" />
+                              <Menu mnemonicParsing="false" text="Modifier" />
+                              <Menu mnemonicParsing="false" text="Clôturer" />
+                          </menus>
+                        </MenuBar>
                      </children></Pane>
                   <ImageView fitHeight="90.0" fitWidth="130.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../images/logo.png" />
                      </image></ImageView>
-                     <Pane layoutY="85.0" prefHeight="45.0" prefWidth="706.0" style="-fx-background-color: #ce0033;">
+                  <Pane layoutY="85.0" prefHeight="45.0" prefWidth="706.0" style="-fx-background-color: #ce0033;">
                      <children>
-                        <Text fill="WHITE" layoutX="240.0" layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Liste des comptes" textAlignment="CENTER" wrappingWidth="253.62701416015625">
+                        <Text fill="WHITE" layoutX="260.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Débiter un compte" textAlignment="CENTER" wrappingWidth="160.29364013671875">
                            <font>
                               <Font size="18.0" />
                            </font>
@@ -46,21 +58,26 @@
             </AnchorPane>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
                <children>
-                  <Pane layoutX="-4.0" layoutY="-4.0" prefHeight="373.0" prefWidth="706.0" style="-fx-background-color: #fbfbfb;">
+                  <Pane layoutX="-2.0" prefHeight="373.0" prefWidth="706.0" style="-fx-background-color: #ffffff;">
                      <children>
-                        <TableView layoutX="30.0" layoutY="86.0" prefHeight="184.0" prefWidth="647.0">
-                          <columns>
-                            <TableColumn id="id_compte" prefWidth="69.60000228881836" text="ID Compte" />
-                            <TableColumn id="code_compte" prefWidth="81.59998321533203" text="Code compte" />
-                              <TableColumn id="type" prefWidth="54.40000915527344" text="Type" />
-                              <TableColumn id="frais_transfert" prefWidth="100.80000305175781" text="Frais de transfert" />
-                              <TableColumn id="solde_min" prefWidth="100.7999267578125" text="Solde minimum" />
-                              <TableColumn id="taux" prefWidth="41.60003662109375" text="Taux" />
-                              <TableColumn id="plafond" prefWidth="51.999969482421875" text="Plafond" />
-                              <TableColumn id="#id_client" prefWidth="58.39996337890625" text="ID client" />
-                              <TableColumn id="solde_actuel" prefWidth="85.5999755859375" text="Solde actuel" />
-                          </columns>
-                        </TableView>
+                        <MenuButton layoutX="262.0" layoutY="73.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="192.0" style="-fx-background-color: #ce0033;" text="Sélectionner un compte" textFill="#fefdfd">
+                          <items>
+                            <MenuItem fx:id="type" mnemonicParsing="false" style="-fx-background-color: #f4f4f4;" text="Compte épargne n°" />
+                            <MenuItem mnemonicParsing="false" style="-fx-background-color: #f4f4f4;" text="Compte courant n°" /> 
+                          </items>
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </MenuButton>
+                        <Pane layoutX="205.0" layoutY="169.0" prefHeight="35.0" prefWidth="297.0" style="-fx-background-color: #f4f4f4;">
+                           <children>
+                           	<Label  layoutX="21.0" layoutY="9.0" text="Entrez l'ID compte" />
+                              <TextField fx:id="idCpt" layoutX="134.0" layoutY="09.0" />
+                              <Label  layoutX="21.0" layoutY="50.0" text="Entrez le montant :" />
+                              <TextField fx:id="somme" layoutX="134.0" layoutY="50.0" />
+                           </children>
+                        </Pane>
+                        <Button fx:id="valider" onAction="#submitDebit" layoutX="332.0" layoutY="300.0" mnemonicParsing="false" text="Valider" textAlignment="CENTER" />
                      </children></Pane>
                </children></AnchorPane>
         </items>

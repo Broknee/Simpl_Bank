@@ -36,11 +36,6 @@
                               <Font size="18.0" />
                            </font>
                         </Text>
-                        <ImageView accessibleRole="BUTTON" fitHeight="35.0" fitWidth="54.0" layoutX="57.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../../images/arrow.png" />
-                           </image>
-                        </ImageView>
                      </children>
                   </Pane>
                </children>

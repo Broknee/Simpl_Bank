@@ -12,6 +12,9 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 
 public class ControllerHome {
+	
+	private Stage primaryStage;
+	
 	@FXML 
 	private TextField raison_sociale;
 	@FXML 
@@ -35,8 +38,13 @@ public class ControllerHome {
 			ModelBanque mdp = new ModelBanque();
 			mdp.setMdp(password);
 			DaoHome verifBanque = new DaoHome();
-			verifBanque.ConnexionEspaceCompte(raison,password);
+		if(	verifBanque.ConnexionEspaceCompte(raison,password)) 
+			{
+				ControllerDashboard dashboard = new ControllerDashboard();
+				dashboard.affDashboard();
+			};
 			
+
 		}
 	}
 	

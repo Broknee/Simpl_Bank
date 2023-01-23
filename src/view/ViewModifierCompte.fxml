@@ -4,6 +4,8 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.SplitPane?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.Menu?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -19,16 +21,22 @@
                <children>
                   <Pane layoutX="-2.0" layoutY="-52.0" prefHeight="141.0" prefWidth="750.0" style="-fx-background-color: #ffffff;">
                      <children>
-                        <Text layoutX="166.0" layoutY="100.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bienvenue sur le système de gestion bancaire Simpl'Bank !">
-                           <font>
-                              <Font name="System Bold" size="16.0" />
-                           </font>
-                        </Text>
+                        <MenuBar layoutX="144.0" layoutY="83.0" prefHeight="51.0" prefWidth="439.0" style="-fx-background-color: #ffffff;">
+                          <menus>
+                            <Menu mnemonicParsing="false" text="Ouvrir un compte" />
+                            <Menu mnemonicParsing="false" style="-fx-background-color: #f4f4f4;" text="Créditer" />
+                            <Menu mnemonicParsing="false" text="Débiter" />
+                              <Menu mnemonicParsing="false" text="Transférer"  />
+                              <Menu mnemonicParsing="false" text="Modifier"  />
+                              <Menu mnemonicParsing="false" text="Clôturer" />
+                          </menus>
+                        </MenuBar>
                      </children></Pane>
-                  <ImageView fitHeight="90.0" fitWidth="130.0" pickOnBounds="true" preserveRatio="true">
+                 <ImageView fitHeight="71.0" fitWidth="117.0" layoutX="7.0" layoutY="10.0">
                      <image>
-                        <Image url="@../../../../../Pictures/simpl_bank.png" />
-                     </image></ImageView>
+                        <Image url="@../../images/logo.png" />
+                     </image>
+                  </ImageView>
                      <Pane layoutY="85.0" prefHeight="45.0" prefWidth="706.0" style="-fx-background-color: #ce0033;">
                      <children>
                         <Text fill="WHITE" layoutX="240.0" layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Modification du compte n°" textAlignment="CENTER" wrappingWidth="253.62701416015625">
@@ -56,17 +64,19 @@
                                     <Font size="14.0" />
                                  </font>
                               </Text>
-                              <Label layoutX="113.0" layoutY="24.0" text="Type" />
-                              <TextField id="type" fx:id="type" layoutX="51.0" layoutY="41.0"/>
-                              <Label layoutX="88.0" layoutY="74.0" text="Frais Transfert" />
-                              <Button id="enregistrer" fx:id="enregistrer" onAction="#submitModif" layoutX="40.0" layoutY="298.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="170.0" style="-fx-background-color: #ce0033; -fx-background-radius: 20px;" text="Enregistrer les modifications" textFill="WHITE"  />
-                              <Label layoutX="83.0" layoutY="123.0" text="Solde minimum"  />
-                              <Label layoutX="105.0" layoutY="176.0" text="Plafond" />
-                              <TextField id="fraisTransfert" fx:id="fraisTransfert" layoutX="51.0" layoutY="91.0" />
-                              <TextField id="soldeMini" fx:id="soldeMini" layoutX="50.0" layoutY="140.0" />
-                              <TextField id="plafond" fx:id="plafond" layoutX="50.0" layoutY="193.0" />
-                              <Label id="taux" layoutX="88.0" layoutY="230.0" text="Taux d'intêret" />
-                              <TextField id="taux" layoutX="51.0" layoutY="247.0" />
+                              <Label layoutX="105.0" layoutY="3.0" text="idcompte" />
+                              <TextField id="idcompte" fx:id="idcompte" layoutX="51.0" layoutY="20.0"/>
+                              <Label layoutX="113.0" layoutY="55.0" text="Type" />
+                              <TextField id="type" fx:id="type" layoutX="51.0" layoutY="70.0"/>
+                              <Label layoutX="88.0" layoutY="110.0" text="Frais Transfert" />
+                              <TextField id="fraisTransfert" fx:id="fraisTransfert" layoutX="51.0" layoutY="125.0" />
+                              <Button id="enregistrer" fx:id="enregistrer" onAction="#submitModif" layoutX="40.0" layoutY="310.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="170.0" style="-fx-background-color: #ce0033; -fx-background-radius: 20px;" text="Enregistrer les modifications" textFill="WHITE"  />
+                              <Label layoutX="83.0" layoutY="155.0" text="Solde minimum"  />  
+                              <TextField id="soldeMini" fx:id="soldeMini" layoutX="50.0" layoutY="175.0" />
+                                <Label layoutX="105.0" layoutY="205.0" text="Plafond" />  
+                              <TextField id="plafond" fx:id="plafond" layoutX="50.0" layoutY="225.0" />
+                              <Label id="taux"  layoutX="88.0" layoutY="250.0" text="Taux d'intêret" />
+                              <TextField id="taux" fx:id="taux" layoutX="51.0" layoutY="270.0" />
                            </children>
                         </Pane>
                      </children></Pane>

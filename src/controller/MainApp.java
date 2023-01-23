@@ -4,19 +4,16 @@ import javafx.application.Application;
 import javafx.stage.Stage;
 
 
-public class MainApp extends Application {
+public class MainApp extends Application  {
+	
 	@Override
 		public void start(Stage primaryStage) {
 		
 		try {
-			
-			ControllerHome principal = new ControllerHome();
-			principal.affHome(primaryStage);
-			
-			// vers la page modifier compte
-		/*	ControllerModifierCompte modif = new ControllerModifierCompte();
-			modif.affModif(primaryStage);
-			*/
+		// on lance la première page de l'application via l'appel au ControllerHome
+		ControllerHome principal = new ControllerHome();
+		principal.affHome(primaryStage);
+	
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
