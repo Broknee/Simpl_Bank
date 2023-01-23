@@ -43,11 +43,18 @@ public class ModelClient {
 	public void setIdBanque(int idBanque) {
 		this.idBanque = idBanque;
 	}
+	public String getRaisonSociale() {
+		return raisonSociale;
+	}
+	public void setRaisonSociale(String raisonSociale) {
+		this.raisonSociale = raisonSociale;
+	}
 	private int idClient;
 	private String nom;
 	private String prenom;
 	private String mail;
 	private String adresse;
 	private String telephone;
+	private String raisonSociale;
 	private int idBanque;
 }

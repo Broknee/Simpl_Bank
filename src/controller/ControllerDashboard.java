@@ -79,5 +79,10 @@ public class ControllerDashboard {
 		transfert.affTransfert();
 	}
 	
+	public void creerClient(ActionEvent event)
+	{
+		ControllerCreerClient client = new ControllerCreerClient();
+		client.affCreationClient();
+	}
 }
 

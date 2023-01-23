@@ -42,7 +42,7 @@
                         </ImageView>
                         <TextField layoutX="118.0" layoutY="62.0" prefHeight="25.0" prefWidth="414.0" style="-fx-background-color: #da5b5b; -fx-border-color: white;" />
                         <Button layoutX="561.0" layoutY="63.0" mnemonicParsing="false" style="-fx-background-color: #fbfbfb;" text="Chercher" />
-                        <Button layoutX="541.0" layoutY="19.0" mnemonicParsing="false" style="-fx-background-color: #fbfbfb;" text="Ajouter un client" />
+                        <Button layoutX="541.0" layoutY="19.0" mnemonicParsing="false" style="-fx-background-color: #fbfbfb;" text="Ajouter un client" fx:id="ajoutClient" onAction="#creerClient" />
                         <ImageView fitHeight="20.0" fitWidth="23.0" layoutX="502.0" layoutY="66.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../../images/magnifyingGlass.png" />

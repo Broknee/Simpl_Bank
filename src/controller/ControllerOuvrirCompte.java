@@ -49,15 +49,6 @@ public class ControllerOuvrirCompte {
 	 
 	 public void affCreationCompte() {
 			try {
-				/*   A laisser de côté
-				primaryStage.setTitle("Ouvrir Compte");
-				Parent root = FXMLLoader.load(getClass().getResource("/view/ViewOuvrirCompte.fxml"));
-				Scene scene = new Scene(root,700,900);
-				scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
-				primaryStage.setScene(scene);
-				primaryStage.show();
-				*/
-				
 				
 				AnchorPane secondaryLayout = new AnchorPane();
 				secondaryLayout = FXMLLoader.load(getClass().getResource("/view/ViewOuvrirCompte.fxml"));
@@ -130,7 +121,7 @@ public class ControllerOuvrirCompte {
 		 
 		
 		}
-	
+
 	 }
 	
 	
